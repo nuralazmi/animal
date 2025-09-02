@@ -72,8 +72,18 @@
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
-                    <li><a href="chart.html"><i class="fas fa-home"></i>Anasayfa</a></li>
-                    <li><a href="{{ route('adm.categories.index') }}"><i class="fas fa-list"></i>Kategoriler</a></li>
+                    <li class="{{ request()->routeIs('adm.index') ? 'active' : '' }}">
+                        <a href="{{ route('adm.index') }}"><i class="fas fa-home"></i>Anasayfa</a>
+                    </li>
+                    <li class="{{ request()->routeIs('adm.categories.index') ? 'active' : '' }}">
+                        <a href="{{ route('adm.categories.index') }}"><i class="fas fa-list"></i>Kategoriler</a>
+                    </li>
+                    <li class="{{ request()->routeIs('adm.products.index') ? 'active' : '' }}">
+                        <a href="{{ route('adm.products.index') }}"><i class="fas fa-box-open"></i>Ürünler</a>
+                    </li>
+                    <li class="{{ request()->routeIs('adm.orders.index') ? 'active' : '' }}">
+                        <a href="{{ route('adm.orders.index') }}"><i class="fas fa-shopping-cart"></i>Siparişler</a>
+                    </li>
                 </ul>
             </nav>
         </div>
